@@ -25,13 +25,14 @@ function formatDate(timestamp) {
 
 
 function getTemperature(response) {
-    console.log(response.data);
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     let tempElement = document.querySelector("#temperature");
     tempElement.innerHTML = Math.round(response.data.main.temp);
-    let cityElement = document.querySelector("#city");
+    let locationElement = document.querySelector("#location");
     let city = response.data.name;
     let country = response.data.sys.country;
-    cityElement.innerHTML = `${city}, ${country}`;
+    locationElement.innerHTML = `${city}, ${country}`;
     let dateElement = document.querySelector("#date");
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
     let conditionElement = document.querySelector("#condition");
@@ -43,6 +44,7 @@ function getTemperature(response) {
 }
 
 let apiKey = "99b6d7e451166786e8df2d31f57d9b2a";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}&units=metric`;
+let place = "London";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(getTemperature);
