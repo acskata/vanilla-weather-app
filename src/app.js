@@ -13,7 +13,7 @@ function handleSubmit(event) {
 let form = document.querySelector("#location-form");
 form.addEventListener("submit", handleSubmit);
 
-search("London");
+search("Budapest");
 
 function getTemperature(response) {
     let iconElement = document.querySelector("#icon");
