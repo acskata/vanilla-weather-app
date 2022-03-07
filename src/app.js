@@ -10,28 +10,27 @@ function handleSubmit(event) {
     search(inputElement.value);
 }
 
-search("London");
-
 let form = document.querySelector("#location-form");
 form.addEventListener("submit", handleSubmit);
 
+search("London");
 
 function getTemperature(response) {
     let iconElement = document.querySelector("#icon");
     iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     let tempElement = document.querySelector("#temperature");
-    tempElement.innerHTML = Math.round(response.data.main.temp);
     let locationElement = document.querySelector("#location");
     let city = response.data.name;
     let country = response.data.sys.country;
-    locationElement.innerHTML = `${city}, ${country}`;
     let dateElement = document.querySelector("#date");
-    dateElement.innerHTML = formatDate(response.data.dt * 1000);
     let conditionElement = document.querySelector("#condition");
-    conditionElement.innerHTML = response.data.weather[0].description;
     let windElement = document.querySelector("#wind");
-    windElement.innerHTML = Math.round(response.data.wind.speed);
     let humidityElement = document.querySelector("#humidity");
+    tempElement.innerHTML = Math.round(response.data.main.temp);
+    locationElement.innerHTML = `${city}, ${country}`;
+    dateElement.innerHTML = formatDate(response.data.dt * 1000);
+    conditionElement.innerHTML = response.data.weather[0].description;
+    windElement.innerHTML = Math.round(response.data.wind.speed);
     humidityElement.innerHTML = response.data.main.humidity;
 }
 
