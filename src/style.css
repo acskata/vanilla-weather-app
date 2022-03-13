@@ -11,23 +11,15 @@ form {
 
 h1 {
     color: rgb(59, 59, 59);
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 700;
-    line-height: 26px;
-    text-align: right;
-}
-
-h2 {
-    color: rgb(59, 59, 59);
-    font-size: 24px;
-    font-weight: 500;
     line-height: 26px;
     text-align: right;
 }
 
 ul {
     margin: 0 auto;
-    padding: 10px;
+    padding: 0 10px;
     color: rgb(59, 59, 59);
 }
 
@@ -40,13 +32,17 @@ li {
     font-weight: 100;
 }
 
+hr {
+    margin: 2rem 0;
+}
+
+
 .weather-app-wrapper {
     max-width: 500px;
     margin: 40px auto;
 }
 
 .weather-app {
-    margin-bottom: 15px;
     padding: 20px;
     border: 1px solid rgb(59, 59, 59);
     border-radius: 10px;
@@ -69,6 +65,10 @@ li {
 
 .daily-weather {
     text-align: right;
+}
+
+.weather-forecast .col {
+    text-align: center;
 }
 
 #location-form {
