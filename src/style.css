@@ -71,6 +71,11 @@ hr {
     text-align: center;
 }
 
+.forecast-temperature-max,
+.forecast-temperature-min {
+    font-size: 11px;
+}
+
 #location-form {
     margin: 0 auto;
     width: 100%;
