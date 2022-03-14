@@ -14,7 +14,6 @@ h1 {
     font-size: 28px;
     font-weight: 700;
     line-height: 26px;
-    text-align: right;
 }
 
 ul {
@@ -63,17 +62,22 @@ hr {
     font-size: 16px;
 }
 
-.daily-weather {
-    text-align: right;
-}
-
 .weather-forecast .col {
     text-align: center;
+}
+
+.local-forecast {
+    margin: 15px 0;
+    text-align: right;
 }
 
 .forecast-temperature-max,
 .forecast-temperature-min {
     font-size: 11px;
+}
+
+.forecast-temperature-min {
+    opacity: 0.33;
 }
 
 #location-form {
